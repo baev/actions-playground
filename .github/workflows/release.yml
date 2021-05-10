@@ -50,7 +50,7 @@ jobs:
       - name: "Commit next development version and push it"
         run: |
           git commit -am "set next development version ${{ github.event.inputs.releaseVersion }}"
-          git push origin master
+          git push origin ${GITHUB_REF}
 
       - name: "Publish Github Release"
         uses: toolmantim/release-drafter@v5.15.0
